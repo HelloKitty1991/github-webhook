@@ -7,7 +7,7 @@ function run_cmd(cmd, args) {
     var child = spawn(cmd, args);
     var resp = "";
 
-    child.stdout.on('data', function(buffer) { resp += buffer.toString(); console.log(resp); });
+    child.stdout.on('data', function(buffer) { console.log(buffer.toString());});
 }
 
 http.createServer(function (req, res) {
