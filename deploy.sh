@@ -1,5 +1,5 @@
 cd /alidata/root
-git reset origin/master --hard
+git reset origin/hellokitty --hard
 mvn package -Dmaven.test.skip=true
 echo 'copy the ROOT.war to server';
 cd /alidata/root/personal/target
