@@ -1,2 +1,2 @@
-cd /alidata/root/personal
+cd /alidata/root
 mvn package -Dmaven.test.skip=true
