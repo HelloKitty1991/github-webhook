@@ -1,6 +1,9 @@
 var http = require('http')
 var createHandler = require('github-webhook-handler')
-var handler = createHandler({ path: '/apollo-webhook', secret: 'IAv38Q9uPyZTM2Pr' })
+var handler = createHandler({
+    path: '/apollo-webhook', secret: 'IAv38Q9uPyZTM2Pr',
+    path:'/personal-static-webhook',secret:'Fg3ITv6aUxCYMGsM'
+});
 
 function run_cmd(cmd, args) {
     var spawn = require('child_process').spawn;
