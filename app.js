@@ -8,7 +8,6 @@ var handler = createHandler({
 function run_cmd(cmd, args) {
     var spawn = require('child_process').spawn;
     var child = spawn(cmd, args);
-    var resp = "";
 
     child.stdout.on('data', function(buffer) { console.log(buffer.toString());});
 }
@@ -30,5 +29,5 @@ handler.on('push', function (event) {
     console.log('Received a push event for %s to %s',
         event.payload.repository.name,
         event.payload.ref);
-    // run_cmd('sh', ['./deploy.sh']);
+    run_cmd('sh', [`./${event.payload.repository.name}.deploy.sh`]);
 })
