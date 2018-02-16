@@ -4,6 +4,8 @@ const handlerOptions = [{
     path: '/apollo-webhook', secret: 'IAv38Q9uPyZTM2Pr'
 }, {
     path: '/personal-static-webhook', secret: 'Fg3ITv6aUxCYMGsM'
+},{
+    path: '/personal-h5-webhook', secret: 'bEdhVJnBS0tpIHGA'
 }]
 const handlerMap = {};
 handlerOptions.forEach(option =>{
