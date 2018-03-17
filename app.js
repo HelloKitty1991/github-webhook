@@ -1,5 +1,6 @@
 const http = require('http')
 const createHandler = require('github-webhook-handler')
+const queryHouseInfo = require('./queryHouseInfo');
 const handlerOptions = [{
     path: '/apollo-webhook', secret: 'IAv38Q9uPyZTM2Pr'
 }, {
@@ -31,6 +32,10 @@ function run_cmd(cmd, args) {
         console.log(buffer.toString());
     });
 }
+
+queryHouseInfo();
+
+setInterval(queryHouseInfo,60 * 1000);
 
 http.createServer(function (req, res) {
     handlerMap[req.url.split('?').shift()](req, res, function () {
