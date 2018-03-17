@@ -21,6 +21,7 @@ var mailOptions = {
 
 module.exports = function(){
     request.get(baseUrl,(err,resp,body) =>{
+        console.log('analysis the room information .....');
         let result = body.match(/<div class="cont1_rukou">(.*?)<\/div>/);
         if(result && result.length){
             result = result[1];
